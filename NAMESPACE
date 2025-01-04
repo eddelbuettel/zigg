@@ -1,0 +1,17 @@
+## export all regularly named functions
+## (but allow for private functions whose name starts with a dot).name <- function(...)
+## exportPattern("^[[:alpha:]]+")
+
+export(zrnorm,
+       zrexp,
+       zrunif,
+       #zgetseed,
+       zsetseed)
+
+useDynLib(zigg,
+          zrnorm_impl = zrnorm,
+          zrexp_impl = zrexp,
+          zrunif_impl = zrunif,
+          zsetseed_impl = zsetseed,
+          #zgetseed_impl = zgetseed,
+          .registration=TRUE)

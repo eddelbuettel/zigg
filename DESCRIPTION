@@ -1,0 +1,19 @@
+Package: zigg
+Type: Package
+Title: An Lightweight Interface to the 'Ziguurat' Pseudo Random Number Generator
+Version: 0.0.0
+Date: 2025-01-04
+Authors@R: person("Dirk", "Eddelbuettel", role = c("aut", "cre"), email = "edd@debian.org",
+                  comment = c(ORCID = "0000-0001-6419-907X"))
+Description: 'Ziggurat' by Marsaglia and Tsang (2000, <doi:10.18637/jss.v005.i08>) and improved by
+ Leong et al (2005, <doi:10.18637/jss.v012.i07>) offers a lightweight and fast PRNG for normal,
+ exponential, and uniform distributions which is offered here for use from R. The implementation
+ leans on the one in package 'RcppZiggurat' which offers a comparisone among multiple alternative
+ implementations. These PRNGs provided are generally faster than the ones in base R, but should be
+ consider to be of potentially lesser quality so if in doubt use of the base R functions is
+ recommended. However, for certain more explorative use the functions provided here should prove
+ useful too.
+LinkingTo: tidyCpp
+License: GPL (>= 2)
+Encoding: UTF-8
+RoxygenNote: 6.0.1
