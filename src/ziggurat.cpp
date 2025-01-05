@@ -15,24 +15,27 @@ extern "C" {
 sexp zrnorm(sexp ns) {
     int n = R::asInteger(ns);
     R::Protect v = R::allocVectorNumeric(n);
+    double* p = R::numericPointer(v);
     for (int i = 0; i < n; i++)
-        R::numericPointer(v)[i] = ziggurat.rnorm();
+        p[i] = ziggurat.rnorm();
     return v;
 }
 
 sexp zrexp(sexp ns) {
     int n = R::asInteger(ns);
     R::Protect v = R::allocVectorNumeric(n);
+    double* p = R::numericPointer(v);
     for (int i = 0; i < n; i++)
-        R::numericPointer(v)[i] = ziggurat.rexp();
+        p[i] = ziggurat.rexp();
     return v;
 }
 
 sexp zrunif(sexp ns) {
     int n = R::asInteger(ns);
     R::Protect v = R::allocVectorNumeric(n);
+    double* p = R::numericPointer(v);
     for (int i = 0; i < n; i++)
-        R::numericPointer(v)[i] = ziggurat.runi();
+        p[i] = ziggurat.runi();
     return v;
 }
 
