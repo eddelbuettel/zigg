@@ -13,7 +13,6 @@ Description: 'Ziggurat' by Marsaglia and Tsang (2000, <doi:10.18637/jss.v005.i08
  consider to be of potentially lesser quality so if in doubt use of the base R functions is
  recommended. However, for certain more explorative use the functions provided here should prove
  useful too.
-LinkingTo: tidyCpp
 License: GPL (>= 2)
 Encoding: UTF-8
 RoxygenNote: 6.0.1
