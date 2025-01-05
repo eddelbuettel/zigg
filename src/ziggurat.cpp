@@ -46,10 +46,4 @@ sexp zsetseed(sexp ss) {
     return R_NilValue;
 }
 
-// sexp zgetseed(sexp ss) {
-//     uint32_t su = ziggurat.getSeed();
-//     double sd = static_cast<double>(su);
-//     return R::scalarReal(sd);
-// }
-
 }

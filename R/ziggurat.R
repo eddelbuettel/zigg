@@ -11,25 +11,20 @@
 #' @return A vector of pseudo random-number generated draws from either the Normal,
 #' Exponential or Uniform distribution, as selected
 zrnorm <- function(n) {
-    .Call(zrnorm_impl, n)
+    .Call(cpp_zrnorm, n)
 }
 
 #' @rdname zrnorm
 zrexp <- function(n) {
-    .Call(zrexp_impl, n)
+    .Call(cpp_zrexp, n)
 }
 
 #' @rdname zrnorm
 zrunif <- function(n) {
-    .Call(zrunif_impl, n)
+    .Call(cpp_zrunif, n)
 }
 
 #' @rdname zrnorm
 zsetseed <- function(s) {
-    invisible(.Call(zsetseed_impl, s))
+    invisible(.Call(cpp_zsetseed, s))
 }
-
-## # ' @rdname zrnorm
-## zgetseed <- function() {
-##     .Call(zgetseed_impl)
-## }
