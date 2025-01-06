@@ -39,6 +39,31 @@ of study so you may well consider sticking with high-quality, well-tested, and w
 default generators in R.  This package provides a useful illustration of how and older and simpler
 generator can be lighter and faster (at possibly a lesser total period etc).
 
+### Usage
+
+#### Direct R Use
+
+The preceding [demo/timings.R][timings] shows the basic usage from R.  This works as usual:
+
+```r
+library(zigg) # load package
+zrnorm(5)     # draw five N(0,1) distributed variate
+```
+
+#### Source Use In Packages
+
+The package can also be used
+in compiled code---even in _two_ different ways.  Both are demonstrated in two include demo
+packages:
+
+- [zigguserDirect][zigguserdirect] may be the easier way for other package authors as they key
+  compiled functions of this package are provided (via a standard R mechanism) as exported object
+  code that can be called directly (see [Writing R Extensions][wre] for details);
+- [zigguserHeader][zigguserHeader] may be the easier way for C++ programmers familiar with
+  header-only libraries as this package provides access to [Ziggurat][ziggurat] via one such header;
+  the remainder is then standard use of compiled functions in an R package.
+
+
 ### Installation
 
 The code is provided as an R package so a standard installation from the repository via
@@ -83,3 +108,6 @@ GPL (>= 2)
 [gretl]: https://gretl.sf.net/
 [quantlib]: https://quantlib.org
 [timings]: https://github.com/eddelbuettel/zigg/blob/master/demo/timings.R
+[zigguserdirect]: https://github.com/eddelbuettel/zigg/blob/master/inst/examplePackages/direct
+[zigguserheader]: https://github.com/eddelbuettel/zigg/blob/master/inst/examplePackages/header
+[wre]: https://rstudio.github.io/r-manuals/r-exts/System-and-foreign-language-interfaces.html#linking-to-native-routines-in-other-packages
