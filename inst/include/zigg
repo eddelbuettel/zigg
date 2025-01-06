@@ -44,7 +44,7 @@
 //
 // The code by Burkardt was modified by
 // a) reorganising it as a C++ class,
-// b) removing the exponential generator
+// b) (initially) removing the exponential generator (now restored_
 //
 // This file represent the Leong, Zhang et al improvement over the
 // original Marsaglia and Tsang article and can be recommended for use.
@@ -52,7 +52,9 @@
 // MarsagliaTsang
 // Derived from newer version by John Burkardt
 // Does contain Leong et al correction, uses (u)int32_t
+// Uses initialization based on current time, old init can be activated
 
+#include <chrono>
 #include <cstdint>
 #include <cmath>
 #include <vector>
@@ -67,19 +69,23 @@ namespace zigg {
     #define MWC  (( znew << 16) + wnew)
     #define SHR3 (jz = jsr, jsr ^= (jsr << 13), jsr ^= (jsr >> 17), jsr ^= (jsr << 5), jz + jsr)
     #define CONG (jcong = 69069 * jcong + 1234567)
-    //#define KISS ((MWC ^ CONG ) + SHR3)
-
-    //#define UNI  (0.5 + (int32_t) KISS * 0.2328306e-09)
-    //#define RNOR (hz = KISS, iz = hz & 127, ( abs ( hz ) < kn[iz] ) ? hz * wn[iz] : nfix())
-    //#define REXP (jz = KISS, iz = jz & 255, (       jz   < ke[iz] ) ? jz * we[iz] : efix())
+    // these macros are now inlined member functions below
+    // #define KISS ((MWC ^ CONG ) + SHR3)
+    // #define UNI  (0.5 + (int32_t) KISS * 0.2328306e-09)
+    // #define RNOR (hz = KISS, iz = hz & 127, ( abs ( hz ) < kn[iz] ) ? hz * wn[iz] : nfix())
+    // #define REXP (jz = KISS, iz = jz & 255, (       jz   < ke[iz] ) ? jz * we[iz] : efix())
 
     class Ziggurat {
     public:
-        Ziggurat(uint32_t seed=123456789) : jcong(380116160),
-                                            jsr(123456789),
-                                            w(521288629),
-                                            z(362436069) {
+            Ziggurat(uint32_t seed=123456789) : jcong(380116160),
+                                                jsr(123456789),
+                                                w(521288629),
+                                                z(362436069) {
             init();
+#if !defined(ZIGG_USE_ORIGINAL_FIXED_INITIALIZATION)
+            uint64_t msecsince = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
+            seed = static_cast<uint32_t>(msecsince); // known lossy conversion
+#endif
             setSeed(seed);
         }
         ~Ziggurat() {};
