@@ -6,10 +6,19 @@
 #' (2005, <doi:10.18637/jss.v012.i07>.
 #'
 #' @param n The size of the returned vector
-#' @param s The chose seed
+#' @param s The chosen seed
 #'
 #' @return A vector of pseudo random-number generated draws from either the Normal,
 #' Exponential or Uniform distribution, as selected
+#'
+#' @references
+#' <doi:10.18637/jss.v005.i08>
+#' <doi:10.18637/jss.v012.i07>
+#'
+#' @examples
+#' zsetseed(123)
+#' zrnorm(3)
+#' round(summary(zrunif(1e6)), 4)
 zrnorm <- function(n) {
     .Call(cpp_zrnorm, n)
 }

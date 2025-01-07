@@ -18,7 +18,7 @@ zsetseed(s)
 \arguments{
 \item{n}{The size of the returned vector}
 
-\item{s}{The chose seed}
+\item{s}{The chosen seed}
 }
 \value{
 A vector of pseudo random-number generated draws from either the Normal,
@@ -29,4 +29,13 @@ Pseudo random numbers drawn from one of three
 distributions are offered, as proposed by Marsaglia and Tsang
 (2000, <doi:10.18637/jss.v005.i08>) and improved by Leong et al
 (2005, <doi:10.18637/jss.v012.i07>.
+}
+\examples{
+zsetseed(123)
+zrnorm(3)
+round(summary(zrunif(1e6)), 4)
+}
+\references{
+<doi:10.18637/jss.v005.i08>
+<doi:10.18637/jss.v012.i07>
 }
