@@ -1,5 +1,5 @@
 
-#include <ziggAPI.h>
+#include <zigg_Cpp_API.h>
 
 extern "C" {
     SEXP ziggrnorm_impl(SEXP ns) {

@@ -1,4 +1,4 @@
 export(ziggrnorm,
        ziggsetseed)
 import(zigg)
-useDynLib(zigguserDirect, .registration=TRUE)
+useDynLib(zigguserDirectCpp, .registration=TRUE)
