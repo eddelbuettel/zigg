@@ -1,4 +1,4 @@
-#include <zigg>                 					// provided by the zigg package
+#include <zigg/header>             					// provided by the zigg package
 
 #include <R.h>
 #include <Rinternals.h>         					// for SEXP

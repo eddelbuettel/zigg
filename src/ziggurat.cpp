@@ -1,5 +1,5 @@
 
-#include <zigg>
+#include <zigg/header>          					// in ../inst/include/zigg/header
 
 #include <R.h>
 #include <Rinternals.h>         					// for SEXP

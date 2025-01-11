@@ -1,5 +1,5 @@
 
-#include <zigg_C_API.h>
+#include <zigg/api/C>
 
 /* declaration of external functions exported by package zigg */
 /* see file src/init.c for the R_GetCCallable() call to assign these */
