@@ -3,3 +3,4 @@
 ^\.Rproj\.user$
 ^\.github$
 ^\.editorconfig$
+inst/examplePackages/benchmark.R
