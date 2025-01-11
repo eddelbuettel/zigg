@@ -11,7 +11,7 @@ static const R_CallMethodDef CallEntries[] = {
     {NULL, NULL, 0}
 };
 
-void R_init_zigguserHeader(DllInfo *dll) {
+void R_init_zigguserHeaderCpp(DllInfo *dll) {
     R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
     R_useDynamicSymbols(dll, FALSE);
 }

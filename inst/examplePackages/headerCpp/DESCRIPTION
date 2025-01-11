@@ -1,4 +1,4 @@
-Package: zigguserHeader
+Package: zigguserHeaderCpp
 Type: Package
 Title: Usage Example for the 'zigg' Package via Header-File
 Version: 0.0.1

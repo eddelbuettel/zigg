@@ -1,3 +1,0 @@
-export(ziggrnorm,
-       ziggsetseed)
-useDynLib(zigguserHeader, .registration=TRUE)
