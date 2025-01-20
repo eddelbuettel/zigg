@@ -53,16 +53,24 @@ zrnorm(5)     # draw five N(0,1) distributed variate
 #### Source Use In Packages
 
 The package can also be used
-in compiled code---even in _two_ different ways.  Both are demonstrated in two include demo
-packages:
+in compiled code---even in _four_ different ways.  All are demonstrated in included demo
+packages and perform similarly but offer different approaches.
 
-- [zigguserDirect][zigguserdirect] may be the easier way for other package authors as they key
-  compiled functions of this package are provided (via a standard R mechanism) as exported object
-  code that can be called directly (see [Writing R Extensions][wre] for details);
-- [zigguserHeader][zigguserHeader] may be the easier way for C++ programmers familiar with
-  header-only libraries as this package provides access to [Ziggurat][ziggurat] via one such header;
-  the remainder is then standard use of compiled functions in an R package.
-
+- [zigguserDirectC][zigguserdirectC] declares the (remote) functions and
+  instantiates function pointers in `src/init.c` using a standard R mechanism
+  for as exported object code that can be called directly (and consult the
+  [Writing R Extensions][wre] manual for details);
+- [zigguserDirectCpp][zigguserdirectCpp] is similar but assigns the functions
+  pointers inside an included header file in a somewhat more idiomatic C++
+  way;
+- [zigguserHeaderCpp][zigguserheaderCpp] may be the easier way for C++
+  programmers familiar with header-only libraries as this package provides
+  access to [Ziggurat][ziggurat] via one such header; the remainder is then
+  standard use of compiled functions in an R package.
+- [zigguserHeaderRcpp][zigguserheaderRcpp] gets to use additional
+  [Rcpp][rcpp] machinery to make package building simpler, it also adds a
+  layer parameter testing adding to a small performance penalty relative to
+  the other three (more bare-bones) approaches.
 
 ### Installation
 
@@ -108,6 +116,9 @@ GPL (>= 2)
 [gretl]: https://gretl.sf.net/
 [quantlib]: https://quantlib.org
 [timings]: https://github.com/eddelbuettel/zigg/blob/master/demo/timings.R
-[zigguserdirect]: https://github.com/eddelbuettel/zigg/blob/master/inst/examplePackages/direct
-[zigguserheader]: https://github.com/eddelbuettel/zigg/blob/master/inst/examplePackages/header
+[zigguserdirectC]: https://github.com/eddelbuettel/zigg/blob/master/inst/examplePackages/directC
+[zigguserdirectCpp]: https://github.com/eddelbuettel/zigg/blob/master/inst/examplePackages/directCpp
+[zigguserheaderCpp]: https://github.com/eddelbuettel/zigg/blob/master/inst/examplePackages/headerCpp
+[zigguserheaderRcpp]: https://github.com/eddelbuettel/zigg/blob/master/inst/examplePackages/headerRcpp
 [wre]: https://rstudio.github.io/r-manuals/r-exts/System-and-foreign-language-interfaces.html#linking-to-native-routines-in-other-packages
+[rcpp]: https://www.rcpp.org
