@@ -17,24 +17,25 @@ Type 'q()' to quit R.
 
 > 
 > library(zigg)
+> options(digits=6, scipen=99)
 > 
 > N <- 1e5
 > zsetseed(12345)
 > 
 > rn <- zrnorm(N)
-> summary(rn)
-     Min.   1st Qu.    Median      Mean   3rd Qu.      Max. 
--4.493650 -0.678462 -0.001353 -0.001309  0.677760  4.358705 
+> round(summary(rn), digits=4)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+-4.4937 -0.6785 -0.0014 -0.0013  0.6778  4.3587 
 > 
 > re <- zrexp(N)
-> summary(re)
-     Min.   1st Qu.    Median      Mean   3rd Qu.      Max. 
- 0.000003  0.290395  0.693923  1.016675  1.384975 13.652944 
+> round(summary(re), digits=4)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  0.000   0.290   0.694   1.017   1.385  13.653 
 > 
 > ru <- zrunif(N)
-> summary(ru)
-     Min.   1st Qu.    Median      Mean   3rd Qu.      Max. 
-0.0000242 0.2506003 0.5011557 0.5011514 0.7524853 0.9999918 
+> round(summary(ru), digits=4)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  0.000   0.251   0.501   0.501   0.752   1.000 
 > 
 > zsetseed(12345)
 > all.equal(rn, zrnorm(N))
@@ -46,4 +47,4 @@ Type 'q()' to quit R.
 > 
 > proc.time()
    user  system elapsed 
-  0.913   0.025   0.166 
+  0.919   0.032   0.155 
