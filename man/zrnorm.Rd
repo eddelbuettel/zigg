@@ -22,7 +22,7 @@ zsetseed(s)
 }
 \value{
 A vector of pseudo random-number generated draws from either the Normal,
-Exponential or Uniform distribution, as selected
+Exponential or Uniform distribution, as selected.
 }
 \description{
 Pseudo random numbers drawn from one of three
