@@ -5,7 +5,7 @@ ziggrnorm <- function(n) {
     .Call(`_zigguserHeaderRcpp_ziggrnorm`, n)
 }
 
-ziggsetseed <- function(sd) {
-    invisible(.Call(`_zigguserHeaderRcpp_ziggsetseed`, sd))
+ziggsetseed <- function(s) {
+    invisible(.Call(`_zigguserHeaderRcpp_ziggsetseed`, s))
 }
 

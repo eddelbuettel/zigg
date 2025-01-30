@@ -9,7 +9,7 @@
 #' @param s The chosen seed
 #'
 #' @return A vector of pseudo random-number generated draws from either the Normal,
-#' Exponential or Uniform distribution, as selected
+#' Exponential or Uniform distribution, as selected.
 #'
 #' @references
 #' <doi:10.18637/jss.v005.i08>

@@ -13,7 +13,7 @@ Rcpp::NumericVector ziggrnorm(int n) {
 }
 
 // [[Rcpp::export(rng = false)]]
-void ziggsetseed(double sd) {
-    uint32_t su = static_cast<uint32_t>(sd);
+void ziggsetseed(double s) {
+    uint32_t su = static_cast<uint32_t>(s);
     ziggurat.setSeed(su);
 }

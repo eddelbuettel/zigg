@@ -21,11 +21,11 @@ BEGIN_RCPP
 END_RCPP
 }
 // ziggsetseed
-void ziggsetseed(double sd);
-RcppExport SEXP _zigguserHeaderRcpp_ziggsetseed(SEXP sdSEXP) {
+void ziggsetseed(double s);
+RcppExport SEXP _zigguserHeaderRcpp_ziggsetseed(SEXP sSEXP) {
 BEGIN_RCPP
-    Rcpp::traits::input_parameter< double >::type sd(sdSEXP);
-    ziggsetseed(sd);
+    Rcpp::traits::input_parameter< double >::type s(sSEXP);
+    ziggsetseed(s);
     return R_NilValue;
 END_RCPP
 }
