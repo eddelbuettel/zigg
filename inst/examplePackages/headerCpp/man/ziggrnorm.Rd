@@ -1,7 +1,7 @@
 \name{ziggrnorm}
 \alias{ziggrnorm}
 \alias{ziggsetseed}
-\title{Ziggurat Pseudo Random Number Generators Client Package (Direct Version)}
+\title{Ziggurat Pseudo Random Number Generators Client Package (C++ Header Version)}
 \usage{
 ziggrnorm(n)
 
@@ -17,7 +17,7 @@ A vector of pseudo random-number generated draws from the Normal distribution.
 }
 \description{
 Sample client package using \pkg{zigg}, in this version via direct use of
-objects in the \pkg{zigg} package.
+object in the \pkg{zigg} package.
 }
 \examples{
 ziggsetseed(123)
