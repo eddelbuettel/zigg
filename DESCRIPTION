@@ -20,6 +20,8 @@ Description: The 'Ziggurat' pseudo-random number generator (or PRNG),
  and uniform are on the order of 7.4, 5.2 and 4.7 times faster than base R.
  However, these generators are of potentially lesser quality and shorter period
  so if in doubt use of the base R functions remains the general recommendation.
+URL: https://github.com/eddelbuettel/zigg
+BugReports: https://github.com/eddelbuettel/zigg/issues
 License: GPL (>= 2)
 Encoding: UTF-8
 RoxygenNote: 6.0.1
