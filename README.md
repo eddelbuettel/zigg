@@ -21,9 +21,10 @@ comparison.
 
 However, this existing R package provides a heavier build, and imposes run-time limits as it also
 links to the GNU GSL (for the method by [Voss][voss]) as well as implementation from [gretl][gretl]
-and [quantlib][quantlib]. The new package assembled here offers a lighterweight alternative. It can
+and [quantlib][quantlib]. The new package assembled here offers a lighter-weight alternative. It can
 be called directly from R, and also offers a C(++)-callable interface other packages can use in
-their native code.
+their native code as we demonstrate via four different sample client packages each connecting in a
+slightly different way.
 
 ### Example
 
@@ -35,9 +36,10 @@ It shows that the speed gains from `zigg` relative to base R are (for this examp
 on the order of 7.4, 5.2, and 4.7 for the normal, exponential, and uniform RRNGs.
 
 That said, the actual time drawing random numbers will likely only affect a fraction of the run-time
-of study so you may well consider sticking with high-quality, well-tested, and widely-deployed
-default generators in R.  This package provides a useful illustration of how and older and simpler
-generator can be lighter and faster (at possibly a lesser total period etc).
+of study so one may well consider sticking with either the high-quality, well-tested, and
+widely-deployed default generators available in R, or in other CRAN package.  This package provides
+a useful illustration of how and older and simpler generator can be lighter and faster (at possibly
+a lesser total period etc).
 
 ### Usage
 
@@ -102,23 +104,23 @@ GPL (>= 2)
 
 [marsaglia]: https://en.wikipedia.org/wiki/George_Marsaglia
 [diehard]: https://en.wikipedia.org/wiki/Diehard_tests
-[rgb]: https://webhome.phy.duke.edu/~rgb/
-[dieharder]: https://webhome.phy.duke.edu/~rgb/General/dieharder.php
+[rgb]: http://webhome.phy.duke.edu/~rgb/
+[dieharder]: http://webhome.phy.duke.edu/~rgb/General/dieharder.php
 [dieharder gh]: https://github.com/eddelbuettel/dieharder
 [ziggurat]: https://en.wikipedia.org/wiki/Ziggurat_algorithm
 [jss2000]: https://doi.org/10.18637/jss.v005.i08
 [jss2005]: https://doi.org/10.18637/jss.v012.i07
-[burkardt]: https://people.sc.fsu.edu/~jburkardt
+[burkardt]: https://people.sc.fsu.edu/~jburkardt/
 [voss]: https://www.seehuhn.de/pages/ziggurat
 [rcppziggurat]: https://cran.r-project.org/package=RcppZiggurat
 [runiverse]: https://eddelbuettel.r-universe.dev/zigg
 [runiverseubuntu]: https://docs.r-universe.dev/install/binaries.html#does-r-universe-have-linux-binaries
-[gretl]: https://gretl.sf.net/
-[quantlib]: https://quantlib.org
-[timings]: https://github.com/eddelbuettel/zigg/blob/master/demo/timings.R
-[zigguserdirectC]: https://github.com/eddelbuettel/zigg/blob/master/inst/examplePackages/directC
-[zigguserdirectCpp]: https://github.com/eddelbuettel/zigg/blob/master/inst/examplePackages/directCpp
-[zigguserheaderCpp]: https://github.com/eddelbuettel/zigg/blob/master/inst/examplePackages/headerCpp
-[zigguserheaderRcpp]: https://github.com/eddelbuettel/zigg/blob/master/inst/examplePackages/headerRcpp
+[gretl]: https://gretl.sourceforge.net/
+[quantlib]: https://www.quantlib.org
+[timings]: https://github.com/eddelbuettel/zigg/blob/master/inst/example/timings.R
+[zigguserdirectC]: https://github.com/eddelbuettel/zigg/tree/master/inst/examplePackages/directC
+[zigguserdirectCpp]: https://github.com/eddelbuettel/zigg/tree/master/inst/examplePackages/directCpp
+[zigguserheaderCpp]: https://github.com/eddelbuettel/zigg/tree/master/inst/examplePackages/headerCpp
+[zigguserheaderRcpp]: https://github.com/eddelbuettel/zigg/tree/master/inst/examplePackages/headerRcpp
 [wre]: https://rstudio.github.io/r-manuals/r-exts/System-and-foreign-language-interfaces.html#linking-to-native-routines-in-other-packages
 [rcpp]: https://www.rcpp.org
