@@ -49,7 +49,7 @@ a lesser total period etc).
 
 #### Direct R Use
 
-The preceding [demo/timings.R][timings] shows the basic usage from R.  This works as usual:
+The preceding [examples/timings.R][timings] shows the basic usage from R.  This works as usual:
 
 ```r
 library(zigg) # load package
